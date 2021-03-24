@@ -2,7 +2,7 @@ import React from "react";
 import "../css/stopWatch.css";
 import Windialog from "./Windialog";
 
-export default function Timer({ time, win, reset }) {
+export default function Timer({ time, win, reset, start }) {
   const minutes = ("0" + Math.floor((time / 60000) % 60)).slice(-2);
 
   const sec = ("0" + Math.floor((time / 1000) % 60)).slice(-2);
@@ -29,7 +29,7 @@ export default function Timer({ time, win, reset }) {
           <li>When all the matches have been found you will be winner</li>
         </ul>
       </div>
-      {win && <Windialog isOpen={win} score={score} reset={reset} />}
+      {win && <Windialog isOpen={win} score={score} reset={reset} start={start}/>}
     </>
   );
 }

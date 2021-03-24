@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   const handleClick = () => {
-    setStart(true);
+    setStart(!start);
   };
 
   return (
@@ -40,7 +40,7 @@ function App() {
           </button>
         )}
       </div>
-      <div className="cards">{start && <Cards images={randopos} />}</div>
+      <div className="cards">{start && <Cards images={randopos} start={handleClick}/>}</div>
       <br></br>
     </div>
   );

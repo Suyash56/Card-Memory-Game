@@ -6,12 +6,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 
-export default function Windialog({isOpen,score, reset}) {
+export default function Windialog({isOpen,score, reset,start}) {
   const [open, setOpen] = React.useState(isOpen);
 
   const handleClose = () => {
     setOpen(false);
     reset();
+    start();
   };
 
   return (

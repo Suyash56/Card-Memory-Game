@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../css/stopWatch.css";
 import Timer from "./Timer";
   
-function StopWatch({win}) {
+function StopWatch({win,start}) {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
   const [time, setTime] = useState(0);
@@ -47,7 +47,7 @@ function StopWatch({win}) {
   
   return (
     <div className="stop-watch">
-      <Timer time={time} win={win} reset={handleReset}/>
+      <Timer time={time} win={win} reset={handleReset} start={start}/>
     </div>
   );
 }

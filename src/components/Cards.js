@@ -3,7 +3,7 @@ import "../css/Card.css";
 import StopWatch from'./StopWatch';
 
 
-function Cards({images}) {
+function Cards({images,start}) {
   const cards = Array.from(Array(9).keys());
   const isFlipped = new Array(9);
   isFlipped.fill(false);
@@ -40,7 +40,7 @@ function Cards({images}) {
 
   return (
     <>
-      <StopWatch win={win}/>
+      <StopWatch win={win} start={start}/>
       <div className="grid">
         {cards.map((card, index) => {
           return (
